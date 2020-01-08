@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>this methods</title>
+  </head>
+  <body>
+
+<p>Testing this methods</p>
+<p>this calls global variables to be used within functions</p>
+<p id="demo1"></p>
+<br>
+<p> This used with call</p>
+<p id="demo2"></p>
+
+    <script type="text/javascript">
+      var person = {
+        firstName: "John",
+        lastName : "Doe",
+        id       : 5566,
+        fullName : function() {
+          return this.firstName + " " + this.lastName;
+        }
+      };
+      elem = document.getElementById("demo1");
+      elem.innerHTML = person;
+
+
+      var person1 = {
+        fullName: function() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+      var person2 = {
+        firstName:"John",
+        lastName: "Doe",
+      }
+      person1.fullName.call(person2);  // Will return "John Doe"
+
+      elem1 = document.getElementById("demo2");
+      elem1.innerHTML =  person1.fullName.call(person2);
+
+
+    </script>
+
+    <p>for performance purposes</p>
+
+    <script>
+      window.onload = function() {
+        var element = document.createElement("script");
+        element.src = "myScript.js";
+        document.body.appendChild(element);
+      };
+    </script>
+
+  </body>
+</html>

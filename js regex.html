@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS RegExp</title>
+  </head>
+
+
+
+  <body>
+    <h1>JS RegExp</h1>
+    <p>Regular expression is a sequence of characters that forms a search pattern.</p>
+    <p>syntax: /pattern/modifiers; for example /Ntawiha/i;</p>
+    <p>Normal search of Ntawiha </p>
+    <p id = "id1"> </p>
+    <p>Using regex we can find ntawiha not worring about </p>
+    <p id="id2"></p>
+    <p id="id3"></p>
+
+    <script type="text/javascript">
+      var str = "Wilbrod Ntawiha!";
+      var n = str.search("Ntawiha");
+      document.getElementById('id1').innerHTML = n;
+      var n1=str.search(/ntawiha/i);
+      document.getElementById('id2').innerHTML = n1;
+      var oscar = str.replace(/ntawiha/i, " visit Oscar");
+      document.getElementById('id3').innerHTML = oscar;
+
+
+
+    </script>
+
+  </body>
+</html>

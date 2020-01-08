@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>In JS, everything is an object</p>
+
+    <p>JS objects are mutable</p>
+    <p>testing some print out</p>
+    <p id="id3"></p>
+    <p id="id4"></p>
+    <p id="id5"></p>
+
+
+
+    <script type="text/javascript">
+      var person = "Wilbrod Ntawiha"; //this is an object
+
+      // objects can also be dictionaries or json data e.g.
+      var person2 = { firstName: "Wilbrod", lastName: "Ntawiha", age: 30, color: "black"};
+
+      // the above can be done by using pointers
+      var person3 = new Object();
+      person3.firstName = "Wilbrod";
+      person3.lastName = "Ntawiha";
+      person3.age = 30;
+      //
+      var x = person2;
+      x.firstName // returns Wilbrod
+      x.firstName = "Snell" // replaces wilbrod with Snell
+      document.getElementById('id3').innerHTML = person2.firstName;
+      //propoerties can be acccccessed using
+      x.firstName; //or
+      x["firstName"]; //or
+      y = "age"; x[y];
+
+      // looping within an object
+      var txt = "";
+      for (x in person2) {
+        txt += person2[x] + " | ";
+      }
+
+      document.getElementById('id4').innerHTML = Object.keys(person2);
+      console.log(person2);
+      console.log(person3);
+
+      delete person2.age;
+      console.log(person2);
+
+      //we can add functions within an objects
+      var person4 = {
+        firstName: "Wilbrod",
+        lastName: "Ntawiha",
+        age: 30,
+        color: "black",
+        fullName: function(){
+          return this.firstName + " " + this.lastName;
+        }
+      };
+      console.log(person4);
+      document.getElementById('id5').innerHTML = person4.fullName(); //call it as a function.
+
+
+
+      // Define object
+var obj = {counter : 0};
+
+// Define setters
+Object.defineProperty(obj, "reset", {
+  get : function () {this.counter = 0;}
+});
+Object.defineProperty(obj, "increment", {
+  get : function () {this.counter++;}
+});
+Object.defineProperty(obj, "decrement", {
+  get : function () {this.counter--;}
+});
+Object.defineProperty(obj, "add", {
+  set : function (value) {this.counter += value;}
+});
+Object.defineProperty(obj, "subtract", {
+  set : function (value) {this.counter -= value;}
+});
+
+// Play with the counter:
+obj.reset;
+obj.add = 5;
+obj.subtract = 1;
+obj.increment;
+obj.decrement;
+
+//Object constructors
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+var wils = new Person("Wilbrod", "Ntawiha", 30, "black");
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+console.log(wils, myFather, myMother);
+
+//Add properties to the constructor functions themselves
+function Person1(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+  this.nationality = "Ugandan"
+}
+
+var wils1 = new Person1("Wilbrod", "Ntawiha", 30, "black");
+var myFather1 = new Person1("John", "Doe", 50, "blue");
+var myMother1 = new Person1("Sally", "Rally", 48, "green");
+
+console.log(wils1, myFather1, myMother1);
+
+
+
+
+    </script>
+
+
+  </body>
+</html>
