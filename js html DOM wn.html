@@ -20,6 +20,71 @@ of the <p> element with id="demo":
 
 </script>
 
+<!--
+*Finding HTML Elements*
+
+document.getElementById(id)	//Find an element by element id
+document.getElementsByTagName(name)	//Find elements by tag name
+document.getElementsByClassName(name)	//Find elements by class name
+
+
+*Changing html elements*
+//properties
+element.innerHTML =  new html content	//Change the inner HTML of an element
+element.attribute = new value	//Change the attribute value of an HTML element
+element.style.property = new style	//Change the style of an HTML element
+//methods
+element.setAttribute(attribute, value)	//Change the attribute value of an HTML element
+
+*Event handlers*
+document.getElementById(id).onclick = function(){code}	//Adding event handler code to an onclick event
+
+*There ar emore porpoerties that returns html objects e.g.*
+document.embeds	//Returns all <embed> elements	3
+document.forms	//Returns all <form> elements	1
+document.head	//Returns the <head> element	3
+document.images	//Returns all <img> elements	1
+
+
+-->
+
+
+<script type="text/javascript">
+//This example finds the element with id="main", and then finds all <p> elements inside "main":
+
+  var x = document.getElementById("main");
+  var y = x.getElementsByTagName("p");
+
+//This example returns a list of all elements with class="intro".
+var x = document.getElementsByClassName("intro");
+
+/*
+Finding HTML Elements by CSS Selectors
+If you want to find all HTML elements that match a specified CSS selector (id, class names, types, attributes, values of attributes, etc), use the querySelectorAll() method.
+This example returns a list of all <p> elements with class="intro".
+*/
+var x = document.querySelectorAll("p.intro");
+
+//This example finds the form element with id="frm1", in the forms collection, and displays all element values:
+//Example
+var x = document.forms["frm1"];
+var text = "";
+var i;
+for (i = 0; i < x.length; i++) {
+  text += x.elements[i].value + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+
+
+</script>
+
+
+
+
 
   </body>
+
+
+
 </html>
