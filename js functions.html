@@ -2,9 +2,98 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Java script functions</title>
   </head>
   <body>
+
+    <script type="text/javascript">
+
+//We can create a function to find the maximum using argumnets functions
+//e.g. arguments.length for length, like it is in lists
+// or indexing arguments e.g aruments[i]
+    x = findMax(1, 123, 500, 115, 44, 88); //Function executes when its envoked
+
+    function findMax() {
+      var i;
+      var max = -Infinity;
+      for (i = 0; i < arguments.length; i++) {
+        if (arguments[i] > max) {
+          max = arguments[i];
+        }
+      }
+      return max;
+    }
+
+//Using a similar logic, we can create aggregator functions say in
+// spreadsheets such as sum
+    y = sumAll(1, 123, 500, 115, 44, 88);
+
+function sumAll() {
+  var i;
+  var sum = 0;
+  for (i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+//We can also use functions as methods in objects such as json, for example
+
+var thisGuy = {
+  firstName: "Wilbrod",
+  lastName: "Ntawiha",
+  fullName: function(){
+    this.firstName + " " + this.lastName;
+  }
+}
+thisGuy.fullName(); //this returne "Wilbrod Ntawiha"
+
+//We can also envoke a function with a function constructor, e.g.
+
+function myGuy(arg1, arg2){
+  this.firstName = arg1;
+  this.lastName = arg2;
+}
+var wils = myGuy("Wilbrod", "Ntawiha");
+wils.lastName; //this returns "Ntawiha"
+
+
+//using the call functions
+var personz = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+personz.fullName.call(person1);  // Will return "John Doe"
+
+// we can also use call with arguments
+var person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+person.fullName.call(person1, "Oslo", "Norway");
+
+//Apply and call are thesimilar, the only difference is that
+//call takes on arguments, where as apply takes on arrays
+person.fullName.apply(person1, ["Oslo", "Norway"]);
+
+
+//We can simulate apply on array methods, e.g.
+
+Math.max(1,2,3);  // Will return 3
+Math.max.apply(null,[1,2,3]);  // Will return 3
+Math.max.apply(Math,[1,2,3]);  // Will return 3
+Math.max.apply("",[1,2,3]);  // Will return 3
+
+
+
+    </script>
 
   </body>
 </html>
