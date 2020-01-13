@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Events and event listners</title>
+  </head>
+  <body>
+
+    <h1>Events and event listners</h1>
+    <br>
+    <h2>Events</h2>
+
+    <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+
+    <h6>We can do this in another way</h6>
+    <br>
+
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+
+    <script>
+        function changeText(id) {id.innerHTML = "Ooops!";}
+    </script>
+
+    <h3>We can event attributes</h3>
+    <button onclick="displayDate()"> Try it </button>
+    <!-- -->
+    <h4>Assign Events Using the HTML DOM</h4>
+    <p id="myBtn"> Click here to see today's date </p>
+
+    <script>
+      document.getElementById("myBtn").onclick = displayDate();
+    </script>
+
+  </body>
+</html>
