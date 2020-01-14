@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Navigation</title>
+  </head>
+  <body>
+    <h1>Navigation</h1>
+    <h2>Navigating Between Nodes</h2>
+    <p>You can use the following node properties to navigate between nodes with JavaScript:</p>
+    <ul>
+      <li>parentNode</li>
+      <li>childNodes[nodenumber]</li>
+      <li>firstChild</li>
+      <li>lastChild</li>
+      <li>nextSibling</li>
+      <li>previousSibling</li>
+    </ul>
+<title id="demo">DOM Tutorial</title>
+<script type="text/javascript">
+  var myTitle = document.getElementById("demo").innerHTML;
+  //Accessing the innerHTML property is the same as accessing the nodeValue of the first child:
+  var myTitle = document.getElementById("demo").firstChild.nodeValue;
+  //Accessing the first child can also be done like this:
+  var myTitle = document.getElementById("demo").childNodes[0].nodeValue;
+
+
+</script>
+
+<h1 id="id01">My First Page</h1>
+<p id="id02">Hello!</p>
+
+<script>
+  //All the (3) following examples retrieves the text of an <h1> element and copies it into a <p> element:
+  document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+  document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+  document.getElementById("id02").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
+
+
+</script>
+
+
+
+  </body>
+</html>
