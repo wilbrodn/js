@@ -39,6 +39,27 @@
 
 </script>
 
+<h2>The nodeType Property</h2>
+
+<h1 id="id03">My First Page</h1>
+<p id="id04"></p>
+
+<script>
+document.getElementById("id04").innerHTML = document.getElementById("id03").nodeType;
+/*
+The most important nodeType properties are:
+
+Node	Type	Example
+ELEMENT_NODE	1	<h1 class="heading">W3Schools</h1>
+ATTRIBUTE_NODE	2	 class = "heading" (deprecated)
+TEXT_NODE	3	W3Schools
+COMMENT_NODE	8	<!-- This is a comment -->
+DOCUMENT_NODE	9	The HTML document itself (the parent of <html>)
+DOCUMENT_TYPE_NODE	10	<!Doctype html>
+*/
+
+</script>
+
 
 
   </body>
