@@ -60,7 +60,17 @@ DOCUMENT_TYPE_NODE	10	<!Doctype html>
 
 </script>
 
+<h1>Combine 2 paragraphs</h1>
+<h2 id="idd1">This is paragraph 1</h2>
+<h2 id="idd2">This is paragraph 1</h2>
+<p id="idd3"></p>
+<p id="idd4"></p>
 
+<script type="text/javascript">
+document.getElementById("idd3") = document.getElementById('idd1').nodeType +" | " +document.getElementById('id').nodeType;
+document.getElementById("idd3") = document.getElementById('idd1').nodeValue +" | " +document.getElementById('id').nodeValue;
+
+</script>
 
   </body>
 </html>
